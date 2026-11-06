@@ -14,9 +14,12 @@
 >
   <span class="footer-utilities__text">
     &copy; {{ 'now' | date: '%Y' }}
-    {{ shop.name | link_to: routes.root_url -}}
+    {% comment %} {{ shop.name | link_to: routes.root_url -}} {% endcomment %}
     {%- if block_settings.show_powered_by -%}
-      , {{ powered_by_link }}
+      {% comment %} , {{ powered_by_link }} {% endcomment %}
+       <a href="https://joshuaoseghale.com" target ="_blank">
+        Powered by <span class="reference-text"> Joshua Oseghale </span>
+      </a>
     {%- endif -%}
   </span>
 </div>
@@ -24,6 +27,9 @@
 {% stylesheet %}
   .footer-utilities__group-copyright {
     color: var(--color-utilities, var(--color-foreground-muted));
+  }
+  .reference-text {
+    font-weight: bold;
   }
 {% endstylesheet %}
 
